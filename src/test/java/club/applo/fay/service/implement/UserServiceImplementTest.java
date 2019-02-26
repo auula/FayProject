@@ -38,7 +38,7 @@ public class UserServiceImplementTest {
         long time = new Date().getTime();
         UserInfo userInfo = new UserInfo();
         userInfo.setEmail("ding@codegc.me");
-        userInfo.setPassword("dingshuo.xxxxx");
+        userInfo.setPassword("db.xxxxx");
         userInfo.setStatus(Byte.parseByte("0"));
         userInfo.setCreateTime(String.valueOf(time));
         userInfo.setUpdateTime(String.valueOf(time));
