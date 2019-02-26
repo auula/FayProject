@@ -52,7 +52,7 @@ DruidInfo:
         denyIP: 192.168.1.100
         allowIP: 192.168.88.11,127.0.0.1
         user: admin
-        passwd: dingshuo.6
+        passwd: password.6
         resetEnable: false
         contextPath: /admin/druid/*
 
