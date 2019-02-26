@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="club.applo.fay.mapper.GoodsInfoMapper" >
+  <resultMap id="BaseResultMap" type="club.applo.fay.pojo.GoodsInfo" >
+    <id column="gid" property="gid" jdbcType="BIGINT" />
+    <result column="goods_key" property="goodsKey" jdbcType="VARCHAR" />
+    <result column="key_port" property="keyPort" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="uid" property="uid" jdbcType="BIGINT" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    gid, goods_key, key_port, create_time, status, uid, ip, address
+  </sql>
+
+
+
+  <!-- 数据取一条可以使用的key -->
+  <select id="getKey" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from goods_info
+    where status = 1 order by rand() limit 1;
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from goods_info
+    where gid = #{gid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from goods_info
+    where gid = #{gid,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="club.applo.fay.pojo.GoodsInfo" >
+    insert into goods_info (gid, goods_key, key_port, 
+      create_time, status, uid, 
+      ip, address)
+    values (#{gid,jdbcType=BIGINT}, #{goodsKey,jdbcType=VARCHAR}, #{keyPort,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{uid,jdbcType=BIGINT}, 
+      #{ip,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="club.applo.fay.pojo.GoodsInfo" >
+    insert into goods_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="gid != null" >
+        gid,
+      </if>
+      <if test="goodsKey != null" >
+        goods_key,
+      </if>
+      <if test="keyPort != null" >
+        key_port,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="ip != null" >
+        ip,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="gid != null" >
+        #{gid,jdbcType=BIGINT},
+      </if>
+      <if test="goodsKey != null" >
+        #{goodsKey,jdbcType=VARCHAR},
+      </if>
+      <if test="keyPort != null" >
+        #{keyPort,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="club.applo.fay.pojo.GoodsInfo" >
+    update goods_info
+    <set >
+      <if test="goodsKey != null" >
+        goods_key = #{goodsKey,jdbcType=VARCHAR},
+      </if>
+      <if test="keyPort != null" >
+        key_port = #{keyPort,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="ip != null" >
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where gid = #{gid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="club.applo.fay.pojo.GoodsInfo" >
+    update goods_info
+    set goods_key = #{goodsKey,jdbcType=VARCHAR},
+      key_port = #{keyPort,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      uid = #{uid,jdbcType=BIGINT},
+      ip = #{ip,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR}
+    where gid = #{gid,jdbcType=BIGINT}
+  </update>
+  <update id="removeKey" parameterType="java.lang.Long" >
+    UPDATE goods_info  SET status = 0 WHERE gid =  #{gid,jdbcType=BIGINT}
+  </update>
+</mapper>

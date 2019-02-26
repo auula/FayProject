@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="club.applo.fay.mapper.UserLOGMapper" >
+  <resultMap id="BaseResultMap" type="club.applo.fay.pojo.UserLOG" >
+    <id column="logid" property="logid" jdbcType="BIGINT" />
+    <result column="login_ip" property="loginIp" jdbcType="VARCHAR" />
+    <result column="uid" property="uid" jdbcType="BIGINT" />
+    <result column="event" property="event" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    logid, login_ip, uid, event, update_time
+  </sql>
+  <!--select * from user_log where  uid = '10' order by logid desc limit 5;-->
+
+  <select id="selectByUid" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from user_log
+    where uid = #{uid,jdbcType=BIGINT} ORDER BY logid DESC LIMIT 8;
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_log
+    where logid = #{logid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from user_log
+    where logid = #{logid,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="club.applo.fay.pojo.UserLOG" >
+    insert into user_log (logid, login_ip, uid, 
+      event, update_time)
+    values (#{logid,jdbcType=BIGINT}, #{loginIp,jdbcType=VARCHAR}, #{uid,jdbcType=BIGINT}, 
+      #{event,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="club.applo.fay.pojo.UserLOG" >
+    insert into user_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="logid != null" >
+        logid,
+      </if>
+      <if test="loginIp != null" >
+        login_ip,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="event != null" >
+        event,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="logid != null" >
+        #{logid,jdbcType=BIGINT},
+      </if>
+      <if test="loginIp != null" >
+        #{loginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="event != null" >
+        #{event,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="club.applo.fay.pojo.UserLOG" >
+    update user_log
+    <set >
+      <if test="loginIp != null" >
+        login_ip = #{loginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="event != null" >
+        event = #{event,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where logid = #{logid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="club.applo.fay.pojo.UserLOG" >
+    update user_log
+    set login_ip = #{loginIp,jdbcType=VARCHAR},
+      uid = #{uid,jdbcType=BIGINT},
+      event = #{event,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=VARCHAR}
+    where logid = #{logid,jdbcType=BIGINT}
+  </update>
+</mapper>

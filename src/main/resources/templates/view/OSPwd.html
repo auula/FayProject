@@ -1,0 +1,30 @@
+
+<div class="mdui-typo">
+  <h6 style="font-size: 30px;">更新密码</h6>
+</div>
+<div class="mdui-textfield">
+  <label class="mdui-textfield-label">旧密码</label>
+  <input id="pwd" class="mdui-textfield-input" type="text"  maxlength="300"/>
+</div>
+<p class="resetmess" style="color: red;font-size:16px;"></p>
+<div class="mdui-textfield mdui-textfield-floating-label">
+  <label class="mdui-textfield-label">新密码</label>
+  <input id="reset" class="mdui-textfield-input" type="text" maxlength="20"/>
+
+</div>
+
+
+<button class="mdui-btn mdui-btn-raised" style="color:floralwhite;background: #448aff;" onclick="reset()">修改</button>
+<script TYPE="text/javascript">
+    function reset() {
+        var pwd = $("#pwd").val();
+        var reset = $("#reset").val();
+        $.get(domain + "/system/api/reset?pwd="+pwd+"&reset="+reset,function(results){
+            if(results.status == "200"){
+                $(".resetmess").html(results.messages);
+            }else {
+                $(".resetmess").css("color", "red").html(results.messages);
+            }
+        });
+    }
+</script>

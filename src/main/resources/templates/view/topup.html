@@ -1,0 +1,27 @@
+﻿﻿<div class="mdui-typo">
+  <h6 style="font-size: 30px;">续费和充值 | 当前不支持累计充值,用完一个月再充！</h6>
+</div>
+<div class="mdui-textfield">
+  <label class="mdui-textfield-label">体验卡密</label>
+  <input class="mdui-textfield-input" type="text" value="体验卡密一般只有10分钟,请联系管理员获取体验卡" maxlength="20"/>
+</div>
+<p class="paymess" style="color: red;font-size:16px;"></p>
+<div class="mdui-textfield mdui-textfield-floating-label">
+  <label class="mdui-textfield-label">30天使用期卡密,购买请联系Q2420498526</label>
+  <input class="mdui-textfield-input" id="paycode" name="paycode" type="text" maxlength="300"/>
+
+</div>
+
+<button class="mdui-btn mdui-btn-raised" style="color:floralwhite;background: #448aff;" onclick="topup()">充值</button>
+<script TYPE="text/javascript">
+    function topup() {
+        var data = $("#paycode").val();
+        $.get(domain + "/system/api/topup?paycode="+data,function(results){
+            if(results.status == "200"){
+                $(".paymess").html(results.messages);
+            }else {
+                $(".paymess").css("color", "red").html(results.messages);
+            }
+        });
+    }
+</script>

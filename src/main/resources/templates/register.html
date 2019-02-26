@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户账户注册</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link th:href="@{css/mdb.min.css}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link th:href="@{css/style.css}" rel="stylesheet">
+
+    <style type="text/css">
+
+
+        .messages {
+            margin-bottom: 0px;
+        }
+
+        .in {
+            width: 180px;
+            float: left;
+            font-size: 12px;
+            margin-left: 15px;
+            text-align: center;
+        }
+
+        .code {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body id="body" style="background-image: url(img/gradient2.png);">
+<!--登录-->
+<div class="card text-center i_1" style="width: 48rem;margin: auto;top:80px;">
+    <div class="card-header primary-color white-text">
+        用户账户注册
+    </div>
+    <div class="card-body">
+        <p class="card-text messages">世界那么大,我也想去看看.</p>
+        <form class="text-center form border-light p-5">
+
+            <p id="mess" style="color: red;font-size:16px;"></p>
+            <!-- email-->
+            <input type="text" name="email" id="defaultLoginFormEmail" class="form-control mb-4 in"
+                   placeholder="你的邮箱">
+
+            <!-- pwd -->
+            <input type="password" name="password1" id="defaultLoginFormPassword1" class="form-control mb-4 in"
+                   placeholder="你的密码">
+            <input type="password" name="password2" id="defaultLoginFormPassword2" class="form-control mb-4 in"
+                   placeholder="确认密码">
+            <input type="text" name="icode" id="defaultLoginFormICode" class="form-control mb-4 in"
+                   placeholder="邀请码">
+            <!-- code -->
+            <input type="text" name="code" id="defaultLoginFormText" class="form-control mb-4 in" placeholder="验证码">
+            <img th:src="@{/{time}/captcha/(time=${new java.util.Date().getTime()})}" class="mb-2 code">
+            <!-- Sign in button -->
+            <button class="btn btn-info btn-block my-4" onclick="validate();" type="button">Sign up</button>
+        </form>
+        <a  class="card-text" href="/login">去登录</a>
+    </div>
+    <div class="card-footer text-muted primary-color white-text">
+        <p class="mb-0">Copyright © 2018 fay.codegc.me. All Rights Reserved.</p>
+    </div>
+    <div style="margin: auto;">
+
+    </div>
+</div>
+
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" th:src="@{js/jquery-3.3.1.min.js}"></script>
+<!--use figlet JavaScript-->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+<script type="text/javascript" th:src="@{js/figlet.js}"></script>
+<!--this import my JavaScript-->
+<script type="text/javascript" th:src="@{js/register.js}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" th:src="@{js/popper.min.js}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" th:src="@{js/bootstrap.min.js}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" th:src="@{js/mdb.min.js}"></script>
+<!--<script type="text/javascript" th:src="@{js/jquery.timers-1.2.js}"></script>-->
+<script>
+
+</script>
+</body>
+
+</html>

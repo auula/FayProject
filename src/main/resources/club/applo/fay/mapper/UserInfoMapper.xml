@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="club.applo.fay.mapper.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="club.applo.fay.pojo.UserInfo">
+    <id column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="create_time" jdbcType="VARCHAR" property="createTime" />
+    <result column="now_key" jdbcType="VARCHAR" property="nowKey" />
+    <result column="due_time" jdbcType="VARCHAR" property="dueTime" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="Invite_code" jdbcType="VARCHAR" property="inviteCode" />
+    <result column="update_time" jdbcType="VARCHAR" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    uid, email, password, create_time, now_key, due_time, status, Invite_code, update_time
+  </sql>
+
+  <select id="selectAllUsers"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_info
+  </select>
+
+  <!-- 更新已经过期用户 -->
+  <update id="updateUserKey" parameterType="java.lang.Long">
+    update user_info
+    set `now_key` = 'null', `due_time` = 'stop'
+    where uid = #{uid,jdbcType=BIGINT}
+  </update>
+
+
+  <update id="updatePWD" parameterType="hashmap">
+    update user_info
+    set password = #{pwd,jdbcType=VARCHAR}
+    where uid = #{uid,jdbcType=BIGINT}
+  </update>
+
+
+  <!-- 查询过期的用户返回用户list集合 -->
+  <select id="selectByExpirationUser" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_info
+    where #{nowTime,jdbcType=VARCHAR} > due_time;
+  </select>
+
+
+  <select id="selectByEmailAndPassword" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_info
+    where email = #{email,jdbcType=VARCHAR} AND password = #{password,jdbcType=VARCHAR}
+  </select>
+  <!-- 查询用户是否过期 -->
+  <select id="selectByExpirationTime" parameterType="hashmap" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_info
+    where uid = #{UID,jdbcType=BIGINT} AND  #{nowTime,jdbcType=VARCHAR} > due_time;
+  </select>
+
+  <select id="selectByEmail" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_info
+    where email = #{email,jdbcType=VARCHAR}
+  </select>
+
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_info
+    where uid = #{uid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from user_info
+    where uid = #{uid,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="club.applo.fay.pojo.UserInfo">
+    insert into user_info (uid, email, password, 
+      create_time, now_key, due_time, 
+      status, Invite_code, update_time
+      )
+    values (#{uid,jdbcType=BIGINT}, #{email,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=VARCHAR}, #{nowKey,jdbcType=VARCHAR}, #{dueTime,jdbcType=VARCHAR}, 
+      #{status,jdbcType=TINYINT}, #{inviteCode,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="club.applo.fay.pojo.UserInfo">
+    insert into user_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="nowKey != null">
+        now_key,
+      </if>
+      <if test="dueTime != null">
+        due_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="inviteCode != null">
+        Invite_code,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="nowKey != null">
+        #{nowKey,jdbcType=VARCHAR},
+      </if>
+      <if test="dueTime != null">
+        #{dueTime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="inviteCode != null">
+        #{inviteCode,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="club.applo.fay.pojo.UserInfo">
+    update user_info
+    <set>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="nowKey != null">
+        now_key = #{nowKey,jdbcType=VARCHAR},
+      </if>
+      <if test="dueTime != null">
+        due_time = #{dueTime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="inviteCode != null">
+        Invite_code = #{inviteCode,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where uid = #{uid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="club.applo.fay.pojo.UserInfo">
+    update user_info
+    set email = #{email,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=VARCHAR},
+      now_key = #{nowKey,jdbcType=VARCHAR},
+      due_time = #{dueTime,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      Invite_code = #{inviteCode,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=VARCHAR}
+    where uid = #{uid,jdbcType=BIGINT}
+  </update>
+</mapper>

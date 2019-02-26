@@ -1,0 +1,24 @@
+﻿
+<style >
+  .qr{
+    width: 280px;
+  }
+</style>
+<div class="mdui-typo">
+  <h6 style="font-size: 30px;">我的秘钥</h6>
+</div>
+<div class="mdui-container qr">
+  <img class="mdui-img-rounded qrcode" src="/system/api/qrcode/"/>
+</div>
+<div class="mdui-typo-body-2-opacity">您好！请使用你的手机客户端扫描二维码即可连接到服务器~</div>
+</br>
+<div>
+  <button class="mdui-btn mdui-btn-raised mdui-btn-block" style="color:floralwhite;background: #448aff;" onclick="sendKEY()">点击送秘钥到你注册邮箱 PS：如果没有收到邮件请你检查你垃圾信箱！！</button>
+</div>
+<script>
+  function sendKEY(){
+      $.post(domain + "/system/api/getkey",function (results) {
+          mdui.alert(results.data.key);
+      });
+  }
+</script>

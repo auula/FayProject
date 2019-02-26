@@ -1,0 +1,67 @@
+
+#配置DRUID参数
+logging:
+  level:
+    xatu.zsl: debug #不同目录下的日志可配置不同级别
+    org.springfromework.web: info
+    org.hibernate: error
+    #配置日志文件路径
+  file: SystemLog/Fay.log
+#配置模板引擎
+#配置thymeleaf
+spring:
+  thymeleaf:
+    # 这个开发配置为false，避免改了模板还要重启服务器
+    cache: false
+    cache-seconds: 3600
+    # 这个是配置模板路径的，默认就是templates，可不用配置
+    #prefix: classpath:/templates/
+    # 这个可以不配置，检查模板位置
+    #check-template-location: true
+    #suffix: .html
+    encoding: utf-8
+    # 模板的模式
+    mode: HTML5
+#数据库连接配置
+  datasource:
+    url: jdbc:mysql://129.204.103.124:3306/outline?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: dingshuo.db
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: mysql
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 打开PSCache，并且指定每个连接上PSCache的大小
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,slf4j
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+#mybatis
+mybatis:
+  mapper-locations: classpath:club/applo/fay/mapper/*.xml
+  type-aliases-package: club.applo.fay.pojo  # 注意：对应实体类的路径
+  configuration:
+    map-underscore-to-camel-case: true
+# 驼峰命名规范 如：数据库字段是  order_id 那么 实体字段就要写成 orderId
+
+#mybatis.configuration.mapUnderscoreToCamelCase=false
+#自定义
+DruidInfo:
+        denyIP: 192.168.1.100
+        allowIP: 192.168.88.11,127.0.0.1
+        user: admin
+        passwd: dingshuo.6
+        resetEnable: false
+        contextPath: /admin/druid/*
+
+
+#邮箱服务器配置
+Email:
+  host: mail.applo.club
+  port: 25
+  account: admin
+  password: xxxxx
+server:
+  port: 9011

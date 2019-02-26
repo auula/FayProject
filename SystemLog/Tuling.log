@@ -1,0 +1,99 @@
+2018-12-19 14:22:17.282  INFO 1147 --- [main] c.a.f.s.i.UserServiceImplementTest       : Starting UserServiceImplementTest on MacBookPro2018 with PID 1147 (started by ding in /Users/ding/Tools/Java/idea_workspace/Fay)
+2018-12-19 14:22:17.288  INFO 1147 --- [main] c.a.f.s.i.UserServiceImplementTest       : No active profile set, falling back to default profiles: default
+2018-12-19 14:22:19.894  INFO 1147 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-12-19 14:22:20.089  WARN 1147 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-12-19 14:22:20.100  WARN 1147 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-12-19 14:22:20.548  INFO 1147 --- [main] c.a.f.s.i.UserServiceImplementTest       : Started UserServiceImplementTest in 3.934 seconds (JVM running for 5.796)
+2018-12-19 14:22:20.876  INFO 1147 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-12-19 14:22:23.320  INFO 1147 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-12-19 14:22:23.326  INFO 1147 --- [Thread-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2018-12-19 14:22:33.534  INFO 1149 --- [restartedMain] club.applo.fay.FayApplication            : Starting FayApplication on MacBookPro2018 with PID 1149 (/Users/ding/Tools/Java/idea_workspace/Fay/target/classes started by ding in /Users/ding/Tools/Java/idea_workspace/Fay)
+2018-12-19 14:22:33.541  INFO 1149 --- [restartedMain] club.applo.fay.FayApplication            : No active profile set, falling back to default profiles: default
+2018-12-19 14:22:33.618  INFO 1149 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018-12-19 14:22:33.618  INFO 1149 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018-12-19 14:22:35.536  INFO 1149 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-12-19 14:22:35.562  INFO 1149 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-19 14:22:35.563  INFO 1149 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-19 14:22:35.571  INFO 1149 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/ding/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2018-12-19 14:22:35.667  INFO 1149 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-12-19 14:22:35.668  INFO 1149 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2049 ms
+2018-12-19 14:22:35.730  INFO 1149 --- [restartedMain] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2018-12-19 14:22:35.734  INFO 1149 --- [restartedMain] o.s.boot.web.servlet.RegistrationBean    : Filter webStatFilter was not registered (possibly already registered?)
+2018-12-19 14:22:36.162  INFO 1149 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-12-19 14:22:36.238  WARN 1149 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-12-19 14:22:36.240  WARN 1149 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-12-19 14:22:36.359  INFO 1149 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-12-19 14:22:36.434  INFO 1149 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-12-19 14:22:36.437  INFO 1149 --- [restartedMain] club.applo.fay.FayApplication            : Started FayApplication in 3.372 seconds (JVM running for 4.641)
+2018-12-19 14:22:38.908  INFO 1149 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-19 14:22:38.908  INFO 1149 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2018-12-19 14:22:38.917  INFO 1149 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2018-12-19 14:22:38.985  INFO 1149 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-12-19 14:26:49.875  INFO 1155 --- [main] c.a.f.s.i.UserServiceImplementTest       : Starting UserServiceImplementTest on MacBookPro2018 with PID 1155 (started by ding in /Users/ding/Tools/Java/idea_workspace/Fay)
+2018-12-19 14:26:49.928  INFO 1155 --- [main] c.a.f.s.i.UserServiceImplementTest       : No active profile set, falling back to default profiles: default
+2018-12-19 14:26:52.299  INFO 1155 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-12-19 14:26:52.492  WARN 1155 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-12-19 14:26:52.499  WARN 1155 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-12-19 14:26:52.915  INFO 1155 --- [main] c.a.f.s.i.UserServiceImplementTest       : Started UserServiceImplementTest in 3.816 seconds (JVM running for 5.195)
+2018-12-19 14:26:53.246  INFO 1155 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-12-19 14:26:54.348  INFO 1155 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-12-19 14:26:54.354  INFO 1155 --- [Thread-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2018-12-19 14:27:04.520  INFO 1157 --- [main] c.a.f.s.i.UserServiceImplementTest       : Starting UserServiceImplementTest on MacBookPro2018 with PID 1157 (started by ding in /Users/ding/Tools/Java/idea_workspace/Fay)
+2018-12-19 14:27:04.522  INFO 1157 --- [main] c.a.f.s.i.UserServiceImplementTest       : No active profile set, falling back to default profiles: default
+2018-12-19 14:27:06.832  INFO 1157 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-12-19 14:27:07.023  WARN 1157 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-12-19 14:27:07.032  WARN 1157 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-12-19 14:27:07.457  INFO 1157 --- [main] c.a.f.s.i.UserServiceImplementTest       : Started UserServiceImplementTest in 3.702 seconds (JVM running for 5.029)
+2018-12-19 14:27:07.746  INFO 1157 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-12-19 14:27:08.551  INFO 1157 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-12-19 14:27:08.561  INFO 1157 --- [Thread-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2018-12-19 14:28:18.085  INFO 1149 --- [Thread-16] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-12-19 14:28:18.089  INFO 1149 --- [Thread-16] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2018-12-19 14:28:22.282  INFO 1160 --- [restartedMain] club.applo.fay.FayApplication            : Starting FayApplication on MacBookPro2018 with PID 1160 (/Users/ding/Tools/Java/idea_workspace/Fay/target/classes started by ding in /Users/ding/Tools/Java/idea_workspace/Fay)
+2018-12-19 14:28:22.286  INFO 1160 --- [restartedMain] club.applo.fay.FayApplication            : No active profile set, falling back to default profiles: default
+2018-12-19 14:28:22.389  INFO 1160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018-12-19 14:28:22.390  INFO 1160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018-12-19 14:28:23.761  INFO 1160 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-12-19 14:28:23.778  INFO 1160 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-19 14:28:23.779  INFO 1160 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-19 14:28:23.785  INFO 1160 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/ding/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2018-12-19 14:28:23.853  INFO 1160 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-12-19 14:28:23.853  INFO 1160 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1463 ms
+2018-12-19 14:28:23.887  INFO 1160 --- [restartedMain] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2018-12-19 14:28:23.889  INFO 1160 --- [restartedMain] o.s.boot.web.servlet.RegistrationBean    : Filter webStatFilter was not registered (possibly already registered?)
+2018-12-19 14:28:24.322  INFO 1160 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-12-19 14:28:24.404  WARN 1160 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-12-19 14:28:24.406  WARN 1160 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-12-19 14:28:24.601  INFO 1160 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-12-19 14:28:24.683  INFO 1160 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-12-19 14:28:24.686  INFO 1160 --- [restartedMain] club.applo.fay.FayApplication            : Started FayApplication in 2.781 seconds (JVM running for 3.549)
+2018-12-19 14:28:28.708  INFO 1160 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-19 14:28:28.708  INFO 1160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2018-12-19 14:28:28.713  INFO 1160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2018-12-19 14:28:28.774  INFO 1160 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-12-19 14:28:59.806  INFO 1160 --- [Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-12-19 14:28:59.814  INFO 1160 --- [Thread-14] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2018-12-19 14:29:03.585  INFO 1163 --- [restartedMain] club.applo.fay.FayApplication            : Starting FayApplication on MacBookPro2018 with PID 1163 (/Users/ding/Tools/Java/idea_workspace/Fay/target/classes started by ding in /Users/ding/Tools/Java/idea_workspace/Fay)
+2018-12-19 14:29:03.593  INFO 1163 --- [restartedMain] club.applo.fay.FayApplication            : No active profile set, falling back to default profiles: default
+2018-12-19 14:29:03.650  INFO 1163 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018-12-19 14:29:03.652  INFO 1163 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018-12-19 14:29:04.797  INFO 1163 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-12-19 14:29:04.814  INFO 1163 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-19 14:29:04.815  INFO 1163 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-19 14:29:04.820  INFO 1163 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/ding/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2018-12-19 14:29:04.894  INFO 1163 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-12-19 14:29:04.895  INFO 1163 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1242 ms
+2018-12-19 14:29:04.927  INFO 1163 --- [restartedMain] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2018-12-19 14:29:04.929  INFO 1163 --- [restartedMain] o.s.boot.web.servlet.RegistrationBean    : Filter webStatFilter was not registered (possibly already registered?)
+2018-12-19 14:29:05.316  INFO 1163 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-12-19 14:29:05.393  WARN 1163 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-12-19 14:29:05.395  WARN 1163 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-12-19 14:29:05.503  INFO 1163 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-12-19 14:29:05.570  INFO 1163 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-12-19 14:29:05.573  INFO 1163 --- [restartedMain] club.applo.fay.FayApplication            : Started FayApplication in 2.451 seconds (JVM running for 3.288)
+2018-12-19 14:29:18.023  INFO 1163 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-19 14:29:18.023  INFO 1163 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2018-12-19 14:29:18.030  INFO 1163 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2018-12-19 14:29:18.088  INFO 1163 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-12-19 15:28:25.272  INFO 1163 --- [Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-12-19 15:28:25.279  INFO 1163 --- [Thread-14] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
