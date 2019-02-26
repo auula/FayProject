@@ -24,9 +24,9 @@ spring:
     mode: HTML5
 #数据库连接配置
   datasource:
-    url: jdbc:mysql://129.204.103.124:3306/outline?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://dbIP:3306/outline?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
-    password: dingshuo.db
+    password: 你的数据库密码
     driver-class-name: com.mysql.cj.jdbc.Driver
     platform: mysql
     type: com.alibaba.druid.pool.DruidDataSource
