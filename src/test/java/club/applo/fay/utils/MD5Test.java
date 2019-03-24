@@ -18,6 +18,6 @@ public class MD5Test {
 
     @Test
     public void getMD5Code() {
-        System.out.println(MD5.GetMD5Code("dingshuo.6"));
+        System.out.println(MD5.GetMD5Code("pwd.6"));
     }
 }
