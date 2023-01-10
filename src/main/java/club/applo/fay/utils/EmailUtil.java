@@ -29,7 +29,7 @@ public class EmailUtil {
 	private static String mailSenderAddress = "admin@applo.club";
 	private static String mailSenderNick = "Fay平台管理员账号";
 	private static String mailSenderUsername = "admin@applo.club";
-	private static String mailSenderPassword = "dingshuo.6";
+	private static String mailSenderPassword = "服务器已经没有用了";
 
 
 
